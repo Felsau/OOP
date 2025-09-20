@@ -10,7 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const fullRoomData = {
     "โซนเก่า": [
       { number: "01", status: "occupied" },
-      { number: "02", status: "available", type: 'ห้องพัดลม', price: '3,500', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80', amenities: ['เตียง 5 ฟุต', 'ตู้เสื้อผ้า', 'โต๊ะทำงาน', 'เครื่องทำน้ำอุ่น'] },
+      { 
+      number: "02", 
+      status: "available", 
+      type: 'ห้องพัดลม', 
+      price: '3,500', 
+      images: [
+          'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80'
+      ], 
+      amenities: ['เตียง 5 ฟุต', 'ตู้เสื้อผ้า', 'โต๊ะทำงาน', 'เครื่องทำน้ำอุ่น'] 
+      },
       { number: "03", status: "occupied" },
       { number: "04", status: "occupied" },
       { number: "05", status: "available", type: 'ห้องพัดลม', price: '3,500', image: 'https://images.unsplash.com/photo-1560185893-a55de8537e4e?auto=format&fit=crop&q=80', amenities: ['เตียง 5 ฟุต', 'ตู้เสื้อผ้า', 'โต๊ะทำงาน', 'เครื่องทำน้ำอุ่น'] },

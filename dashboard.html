@@ -4,160 +4,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แดชบอร์ดผู้เช่า - บ้านพักกัน</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="/css/dashboard.style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo"><i class="fas fa-home"></i> บ้านพักกัน</div>
-            <div class="user-menu">
-                <span class="user-name">สวัสดี, คุณชานนท์</span>
-                <a href="index.html" class="logout-button">ออกจากระบบ</a>
+    <div class="dashboard-layout">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><i class="fas fa-home"></i> <span>บ้านพักกัน</span></div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#dashboard-panel" class="nav-link active"><i class="fas fa-th-large"></i><span>ภาพรวม</span></a></li>
+                <li><a href="#payments-panel" class="nav-link"><i class="fas fa-wallet"></i><span>การชำระเงิน</span></a></li>
+                <li>
+                    <a href="#announcements-panel" class="nav-link">
+                        <i class="fas fa-bullhorn"></i>
+                        <span>ประกาศ</span>
+                        <span class="notification-badge hidden" id="announcement-badge"></span>
+                    </a>
+                </li>
+                <li><a href="#maintenance-panel" class="nav-link"><i class="fas fa-tools"></i><span>แจ้งซ่อม</span></a></li>
+                <li><a href="#lease-panel" class="nav-link"><i class="fas fa-file-contract"></i><span>สัญญาเช่า</span></a></li>
+                <li><a href="#calendar-panel" class="nav-link"><i class="fas fa-calendar-alt"></i><span>ปฏิทิน</span></a></li>
+                <li><a href="#contact-panel" class="nav-link"><i class="fas fa-phone-alt"></i><span>ติดต่อเจ้าของ</span></a></li>
+                <li><a href="#moveout-panel" class="nav-link"><i class="fas fa-door-open"></i><span>แจ้งย้ายออก</span></a></li>
+                <li><a href="#profile-panel" class="nav-link"><i class="fas fa-user-cog"></i><span>ข้อมูลส่วนตัว</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-button"><i class="fas fa-sign-out-alt"></i><span>ออกจากระบบ</span></a>
             </div>
         </nav>
-    </header>
 
-    <main class="dashboard-container">
-        <div class="welcome-header">
-            <h2>แดชบอร์ดของคุณ</h2>
-            <p>ภาพรวมข้อมูลสำหรับห้อง A2</p>
-        </div>
-
-        <div class="alert-box">
-            <i class="fas fa-exclamation-triangle"></i>
-            <div>
-                <h3>แจ้งเตือนค้างชำระ</h3>
-                <p>คุณมียอดค้างชำระค่าเช่าเดือนกันยายน 2568</p>
-            </div>
-        </div>
-
-        <div class="dashboard-grid">
-            <div class="card">
-                <h3><i class="fas fa-money-bill-wave"></i> การชำระเงิน</h3>
-                <div class="data-highlight">
-                    <span class="value">4,200</span>
-                    <span class="label">บาท (รอบบิลล่าสุด)</span>
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="main-header-title">ภาพรวม</h1>
+                <div class="user-info">
+                    <span id="user-name">สวัสดี, ...</span>
                 </div>
-                <p class="data-point"><strong>ครบกำหนด:</strong> 7 กันยายน 2568</p>
-                <div class="card-actions">
-                    <button class="btn btn-primary" id="payment-btn">แจ้งชำระเงิน</button>
-                    <button class="btn btn-secondary" id="history-btn">ดูประวัติ</button>
-                </div>
-            </div>
+            </header>
 
-            <div class="card">
-                <h3><i class="fas fa-file-contract"></i> สัญญาและมิเตอร์</h3>
-                <div class="data-highlight">
-                    <span class="value">31</span>
-                    <span class="label">มกราคม 2569 (วันสิ้นสุดสัญญา)</span>
+            <div class="content-panels-container">
+                <div id="dashboard-panel" class="content-panel active">
+                    <div class="overview-cards">
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                            <div class="card-content">
+                                <h3>ยอดชำระเดือนนี้</h3>
+                                <p id="payment-due">... บาท</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
+                            <div class="card-content">
+                                <h3>กำหนดชำระ</h3>
+                                <p id="due-date">วันที่ ...</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-wrench"></i></div>
+                            <div class="card-content">
+                                <h3>รายการแจ้งซ่อม</h3>
+                                <p id="maintenance-status">...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-card" id="reminders-section">
+                        <h2><i class="fas fa-bell"></i> การแจ้งเตือนและนัดหมายเร็วๆ นี้</h2>
+                        <ul class="reminders-list" id="reminders-list">
+                            </ul>
+                    </div>
                 </div>
-                <p class="data-point"><strong>ค่าไฟเดือนล่าสุด:</strong> รอแจ้งยอด</p>
-                <div class="card-actions">
-                    <button class="btn btn-secondary">ดูรายละเอียดสัญญา</button>
-                </div>
-            </div>
 
-            <div class="card">
-                <h3><i class="fas fa-tools"></i> แจ้งซ่อม</h3>
-                <p class="description">หากพบปัญหาอุปกรณ์ชำรุดเสียหายภายในห้องพัก สามารถแจ้งเรื่องผ่านช่องทางนี้ได้ทันที</p>
-                <div class="card-actions">
-                    <button class="btn btn-primary" id="maintenance-btn">แจ้งเรื่อง / ดูสถานะ</button>
+                <div id="payments-panel" class="content-panel">
+                    <div class="panel-card">
+                        <h2><i class="fas fa-qrcode"></i> ชำระเงินรอบปัจจุบัน</h2>
+                        <div class="utility-breakdown" id="utility-breakdown"></div>
+                        <div class="payment-details">
+                            <p>สแกน QR Code นี้เพื่อชำระเงิน</p>
+                            <img src="https://promptpay.io/0812345678/4250.png" alt="QR Code" class="qr-code">
+                            <p class="payment-amount">ยอดรวม: <span id="modal-payment-amount">...</span> บาท</p>
+                            <hr>
+                            <h3><i class="fas fa-upload"></i> อัปโหลดสลิป</h3>
+                            <form id="upload-form">
+                                <div class="form-group"><input type="file" id="slip-upload" required></div>
+                                <button type="submit" class="btn btn-primary">ยืนยันการชำระเงิน</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="panel-card">
+                        <h2><i class="fas fa-history"></i> ประวัติการชำระเงิน</h2>
+                        <div class="table-container">
+                            <table>
+                                <thead><tr><th>เดือน</th><th>จำนวนเงิน</th><th>วันที่ชำระ</th><th>สถานะ</th></tr></thead>
+                                <tbody id="history-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="announcements-panel" class="content-panel">
+                    <div class="panel-card">
+                        <h2><i class="fas fa-bullhorn"></i> ประกาศและข่าวสาร</h2>
+                        <div id="announcement-list"></div>
+                    </div>
+                </div>
+
+                <div id="maintenance-panel" class="content-panel">
+                    <div class="panel-card">
+                        <h2><i class="fas fa-tasks"></i> ติดตามสถานะการแจ้งซ่อม</h2>
+                        <div id="maintenance-list"></div>
+                    </div>
+                    <div class="panel-card">
+                        <h2><i class="fas fa-plus-circle"></i> ส่งเรื่องแจ้งซ่อมใหม่</h2>
+                        <form id="maintenance-form">
+                            <div class="form-group"><label for="issue-type">ประเภทปัญหา</label><select id="issue-type" required><option value="">-- เลือก --</option><option>ไฟฟ้า</option><option>ประปา</option><option>แอร์</option><option>อินเทอร์เน็ต</option><option>อื่นๆ</option></select></div>
+                            <div class="form-group"><label for="issue-details">รายละเอียด</label><textarea id="issue-details" rows="4" placeholder="กรุณาอธิบายปัญหาโดยละเอียด..." required></textarea></div>
+                            <button type="submit" class="btn btn-primary">ส่งเรื่อง</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="lease-panel" class="content-panel">
+                    <div class="panel-card">
+                        <h2><i class="fas fa-file-contract"></i> สัญญาเช่าของคุณ</h2>
+                        <div class="lease-details" id="lease-details">
+                            </div>
+                        <a href="#" id="download-lease-btn" class="btn btn-primary" download><i class="fas fa-download"></i> ดาวน์โหลดสัญญา (PDF)</a>
+                    </div>
+                </div>
+
+                <div id="calendar-panel" class="content-panel">
+                    <div class="panel-card">
+                        <div class="calendar-header">
+                            <button id="prev-month-btn" aria-label="เดือนก่อนหน้า"><i class="fas fa-chevron-left"></i></button>
+                            <h2 id="month-year-header"></h2>
+                            <button id="next-month-btn" aria-label="เดือนถัดไป"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="calendar-grid">
+                            <div class="day-name">อา.</div><div class="day-name">จ.</div><div class="day-name">อ.</div><div class="day-name">พ.</div><div class="day-name">พฤ.</div><div class="day-name">ศ.</div><div class="day-name">ส.</div>
+                        </div>
+                        <div class="calendar-days" id="calendar-days">
+                            </div>
+                        <div class="calendar-legend">
+                            <span class="legend-item today">วันนี้</span>
+                            <span class="legend-item rent-due">วันครบกำหนดชำระ</span>
+                            <span class="legend-item maintenance">นัดหมายซ่อมบำรุง</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contact-panel" class="content-panel">
+                    <div class="panel-card">
+                        <h2><i class="fas fa-phone-alt"></i> ช่องทางการติดต่อเจ้าของบ้าน</h2>
+                        <div class="contact-info-grid">
+                            <div class="contact-item"><i class="fas fa-user"></i><span>คุณสมชาย (เจ้าของบ้าน)</span></div>
+                            <div class="contact-item"><i class="fas fa-phone"></i><span>088-888-8888</span></div>
+                            <div class="contact-item"><i class="fab fa-line"></i><span>@somchai.home</span></div>
+                            <div class="contact-item"><i class="fas fa-envelope"></i><span>somchai.home@email.com</span></div>
+                        </div>
+                        <hr>
+                        <h3><i class="fas fa-paper-plane"></i> ส่งข้อความด่วน</h3>
+                        <form id="contact-form">
+                            <div class="form-group"><textarea id="contact-message" rows="5" placeholder="พิมพ์ข้อความเร่งด่วนของคุณที่นี่... ระบบจะส่งการแจ้งเตือนไปยังเจ้าของบ้าน" required></textarea></div>
+                            <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="moveout-panel" class="content-panel">
+                    <div class="panel-card">
+                        <h2><i class="fas fa-door-open"></i> แบบฟอร์มแจ้งย้ายออก</h2>
+                        <p class="text-light">กรุณากรอกแบบฟอร์มด้านล่างเพื่อแจ้งความประสงค์ขอย้ายออกล่วงหน้าอย่างน้อย 30 วันตามที่ระบุในสัญญา</p>
+                        <form id="moveout-form">
+                            <div class="form-group">
+                                <label for="moveout-date">วันที่คาดว่าจะย้ายออก</label>
+                                <input type="date" id="moveout-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="moveout-reason">เหตุผลในการย้ายออก</label>
+                                <textarea id="moveout-reason" rows="4" placeholder="เช่น สิ้นสุดสัญญาเช่า, ย้ายที่ทำงาน, ฯลฯ" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="forwarding-address">ที่อยู่สำหรับส่งต่อเอกสาร (ถ้ามี)</label>
+                                <input type="text" id="forwarding-address" placeholder="บ้านเลขที่, ถนน, ตำบล, อำเภอ, จังหวัด, รหัสไปรษณีย์">
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-check-circle"></i> ยืนยันการแจ้งย้ายออก</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="profile-panel" class="content-panel">
+                    <div class="panel-card">
+                        <h2><i class="fas fa-user-cog"></i> ข้อมูลส่วนตัว</h2>
+                        <form id="profile-form">
+                            <div class="profile-grid">
+                                <div class="form-group"><label>ชื่อ-สกุล</label><input type="text" id="profile-name" disabled></div>
+                                <div class="form-group"><label>เลขห้อง/บ้านเลขที่</label><input type="text" id="profile-room" disabled></div>
+                                <div class="form-group"><label>เบอร์โทรศัพท์</label><input type="tel" id="profile-phone" disabled required></div>
+                                <div class="form-group"><label>อีเมล</label><input type="email" id="profile-email" disabled required></div>
+                            </div>
+                            <hr><h3>ผู้ติดต่อกรณีฉุกเฉิน</h3>
+                            <div class="profile-grid">
+                                <div class="form-group"><label>ชื่อผู้ติดต่อ</label><input type="text" id="emergency-name" disabled></div>
+                                <div class="form-group"><label>เบอร์โทร</label><input type="tel" id="emergency-phone" disabled></div>
+                            </div>
+                            <div class="profile-actions">
+                                <button type="button" id="edit-profile-btn" class="btn"><i class="fas fa-edit"></i> แก้ไข</button>
+                                <button type="submit" id="save-profile-btn" class="btn btn-primary hidden"><i class="fas fa-save"></i> บันทึก</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-
-            <div class="card">
-                <h3><i class="fas fa-comments"></i> ติดต่อเจ้าของหอ</h3>
-                <p class="description">สอบถามเรื่องทั่วไป หรือแจ้งปัญหาอื่นๆ ที่ต้องการความช่วยเหลือเร่งด่วน</p>
-                <div class="card-actions">
-                    <button class="btn btn-primary">ส่งข้อความ</button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <div id="payment-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2><i class="fas fa-receipt"></i> แจ้งชำระเงิน</h2>
-        <form>
-            <div class="form-group">
-                <label for="payment-amount">จำนวนเงินที่โอน</label>
-                <input type="number" id="payment-amount" placeholder="ระบุจำนวนเงิน">
-            </div>
-            <div class="form-group">
-                <label for="payment-date">วันที่โอน</label>
-                <input type="date" id="payment-date">
-            </div>
-            <div class="form-group">
-                <label for="payment-slip">แนบสลิป</label>
-                <input type="file" id="payment-slip">
-            </div>
-            <button type="submit" class="btn btn-primary">ยืนยันการแจ้งชำระ</button>
-        </form>
-      </div>
+        </main>
     </div>
-    
-    <div id="history-modal" class="modal">
-        <div class="modal-content">
-          <span class="close-button">&times;</span>
-          <h2><i class="fas fa-history"></i> ประวัติการชำระเงิน</h2>
-          <table>
-            <thead>
-                <tr>
-                    <th>รอบบิล</th>
-                    <th>ยอดชำระ</th>
-                    <th>วันที่ชำระ</th>
-                    <th>สถานะ</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>สิงหาคม 2568</td>
-                    <td>4,200 บาท</td>
-                    <td>5 ส.ค. 2568</td>
-                    <td class="status-paid">ชำระแล้ว</td>
-                </tr>
-                <tr>
-                    <td>กรกฎาคม 2568</td>
-                    <td>4,150 บาท</td>
-                    <td>4 ก.ค. 2568</td>
-                    <td class="status-paid">ชำระแล้ว</td>
-                </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-    <div id="maintenance-modal" class="modal">
-        <div class="modal-content">
-          <span class="close-button">&times;</span>
-          <h2><i class="fas fa-tools"></i> แจ้งซ่อม</h2>
-          <form>
-            <div class="form-group">
-                <label for="issue-type">ประเภทปัญหา</label>
-                <select id="issue-type">
-                    <option>ไฟฟ้า</option>
-                    <option>ประปา</option>
-                    <option>เครื่องปรับอากาศ</option>
-                    <option>อินเทอร์เน็ต</option>
-                    <option>อื่นๆ</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="issue-details">รายละเอียด</label>
-                <textarea id="issue-details" rows="4" placeholder="กรุณาอธิบายปัญหาโดยละเอียด..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">ส่งเรื่องแจ้งซ่อม</button>
-          </form>
-        </div>
-      </div>
 
     <script src="/js/dashboard.script.js"></script>
 </body>
