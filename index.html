@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="บ้านพักกัน หอพักนักศึกษาคุณภาพดีหน้ามหาวิทยาลัยพะเยา (มพ.) สะอาด ปลอดภัย พร้อมเฟอร์นิเจอร์และสิ่งอำวยความสะดวกครบครัน">
+    <meta name="keywords" content="หอพัก, มพ, มหาวิทยาลัยพะเยา, หอพักพะเยา, บ้านพักกัน, หอพักใกล้ มพ">
+    <title>บ้านพักกัน - หอพักคุณภาพหน้า ม.พะเยา</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#" class="menu-home">
+          <i class="fas fa-home"></i> บ้านพักกัน
+        </a>
+        <div class="nav-links">
+          <a href="#Type">ห้องพัก</a>
+          <a href="#room-status-map">สถานะห้อง</a>
+          <a href="#nearby">สถานที่ใกล้เคียง</a>
+          <a href="#faq">คำถามที่พบบ่อย</a>
+          <a href="#contact-location">ติดต่อเรา</a>
+        </div>
+        <a href="#" class="menu-login">
+          ล็อกอิน <i class="fas fa-arrow-right"></i>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div class="hero-content" data-aos="fade-right">
+          <h1>บ้านพักกัน</h1>
+          <h2>หอพักคุณภาพ<br>หน้ามหาวิทยาลัยพะเยา</h2>
+          <p>สะอาด ปลอดภัย เดินทางสะดวก พร้อมสิ่งอำนวยความสะดวกครบครัน ตอบโจทย์ทุกไลฟ์สไตล์ของนักศึกษา</p>
+          <a href="#Type" class="cta-button">ดูประเภทห้องพัก</a>
+        </div>
+        <div class="hero-image" data-aos="fade-left">
+          <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=2070" alt="ห้องพักสวยงามในหอพักบ้านพักกัน">
+        </div>
+      </section>
+
+      <section id="Type">
+        <h1 class="section-title" data-aos="fade-up">ประเภทห้องพักและราคา</h1>
+        <div class="room-types-container">
+          
+          <div class="room-card" data-room-name="ห้องแอร์" data-panorama-image="https://pannellum.org/images/bma-1.jpg" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-image-area" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=2070');">
+              <div class="status-badge available">ว่าง 3 ห้อง</div>
+            </div>
+            <div class="card-info">
+               <h2>ห้องแอร์</h2>
+              <div class="details-grid">
+                <ul class="amenities">
+                  <li><i class="fas fa-bed"></i> เตียง 6 ฟุต</li>
+                  <li><i class="fas fa-door-closed"></i> ตู้เสื้อผ้า</li>
+                  <li><i class="fas fa-chair"></i> โต๊ะทำงานและเก้าอี้</li>
+                  <li><i class="fas fa-shower"></i> เครื่องทำน้ำอุ่น</li>
+                  <li><i class="fas fa-snowflake"></i> ตู้เย็น</li>
+                  <li><i class="fas fa-wind"></i> เครื่องปรับอากาศ</li>
+                </ul>
+                <div class="internet-speed">
+                  <i class="fas fa-wifi"></i>
+                  <p>อินเทอร์เน็ต</p>
+                  <p class="speed">1000/1000</p>
+                </div>
+              </div>
+              <hr />
+              <p class="price">3500 <span>/ เดือน</span></p>
+            </div>
+          </div>
+          
+          <div class="room-card" data-room-name="ห้องแอร์บิ้วอิน" data-panorama-image="https://pannellum.org/images/alma-1.jpg" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-image-area" style="background-image: url('https://images.unsplash.com/photo-1595526114035-0d45ed16433d?auto=format&fit=crop&q=80&w=1972');">
+              <div class="status-badge full">เต็ม</div>
+            </div>
+            <div class="card-info">
+               <h2>ห้องแอร์บิ้วอิน</h2>
+               <div class="details-grid">
+                <ul class="amenities">
+                    <li><i class="fas fa-bed"></i> เตียง 6 ฟุต</li>
+                    <li><i class="fas fa-door-closed"></i> ตู้เสื้อผ้าบิ้วอิน</li>
+                    <li><i class="fas fa-chair"></i> โต๊ะทำงานและเก้าอี้</li>
+                    <li><i class="fas fa-shower"></i> เครื่องทำน้ำอุ่น</li>
+                    <li><i class="fas fa-snowflake"></i> ตู้เย็น</li>
+                    <li><i class="fas fa-wind"></i> เครื่องปรับอากาศ</li>
+                </ul>
+                <div class="internet-speed">
+                    <i class="fas fa-wifi"></i>
+                    <p>อินเทอร์เน็ต</p>
+                    <p class="speed">1000/500</p>
+                </div>
+              </div>
+              <hr />
+               <p class="price">4000 <span>/ เดือน</span></p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <section id="room-status-map">
+        <h1 class="section-title" data-aos="fade-up">แผนผังห้องพักและสถานะ</h1>
+        <div class="map-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="legend">
+            <div class="legend-item">
+              <div class="legend-color-box available"></div>
+              <span>ว่าง</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color-box occupied"></div>
+              <span>ไม่ว่าง</span>
+            </div>
+          </div>
+          <div class="zone-tabs">
+            <button class="zone-button active">โซนเก่า</button>
+            <button class="zone-button">โซนกลาง</button>
+            <button class="zone-button">โซนใหม่</button>
+          </div>
+          <div class="floor-plan">
+            <div class="room-column left-side"></div>
+            <div class="hallway">
+              <span>ทางเดิน</span>
+            </div>
+            <div class="room-column right-side"></div>
+          </div>
+          <hr class="map-divider" />
+          <p class="map-instruction">
+            สนใจห้องว่าง? คลิกที่ห้องสีม่วงเพื่อดูรายละเอียด
+          </p>
+        </div>
+      </section>
+
+      <section id="nearby">
+        <h1 class="section-title" data-aos="fade-up">สถานที่ใกล้เคียง</h1>
+        <div class="nearby-grid">
+            <div class="nearby-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-university"></i>
+                <h3>มหาวิทยาลัยพะเยา</h3>
+                <p>ใกล้ประตู 1 เดินทางสะดวกสบาย เพียง 5 นาที</p>
+            </div>
+            <div class="nearby-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-store"></i>
+                <h3>ร้านสะดวกซื้อ</h3>
+                <p>มี 7-Eleven และ Lotus's Go Fresh อยู่ใกล้ๆ</p>
+            </div>
+            <div class="nearby-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-utensils"></i>
+                <h3>ร้านอาหารและคาเฟ่</h3>
+                <p>แหล่งรวมร้านอาหารอร่อยและคาเฟ่่านั่งชิล</p>
+            </div>
+            <div class="nearby-card" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fas fa-print"></i>
+                <h3>ร้านถ่ายเอกสาร</h3>
+                <p>สะดวกสบายเรื่องงานเอกสารและการเรียน</p>
+            </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h1 class="section-title" data-aos="fade-up">คำถามที่พบบ่อย (FAQ)</h1>
+        <div class="faq-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>ค่าน้ำ-ค่าไฟ คิดอัตราเท่าไหร่?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>ค่าน้ำคิดอัตราหน่วยละ 18 บาท และค่าไฟหน่วยละ 8 บาท (ตามอัตรามาตรฐานของหอพัก)</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>สามารถเลี้ยงสัตว์เลี้ยงได้หรือไม่?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>ขออภัยค่ะ หอพักของเราไม่อนุญาตให้เลี้ยงสัตว์เลี้ยงทุกชนิด เพื่อสุขอนามัยที่ดีของส่วนรวม</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>มีที่จอดรถยนต์ให้บริการหรือไม่?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>หอพักมีที่จอดสำหรับรถมอเตอร์ไซค์ให้บริการฟรี ส่วนที่จอดรถยนต์มีจำนวนจำกัดและมีค่าบริการเพิ่มเติม กรุณาติดต่อสอบถาม</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section id="terms">
+        <h1 class="section-title" data-aos="fade-up">ตัวอย่างสัญญาและเงื่อนไขการเช่า</h1>
+        <div class="contract-container" data-aos="fade-up" data-aos-delay="100">
+            <h2>ตัวอย่างสัญญาเช่าห้องพัก "บ้านพักกัน"</h2>
+            <p><strong>ทำที่:</strong> บ้านพักกัน เลขที่ [ที่อยู่หอพัก] ต.แม่กา อ.เมือง จ.พะเยา 56000</p>
+            <p>สัญญาฉบับนี้ทำขึ้นระหว่าง "บ้านพักกัน" โดย [ชื่อเจ้าของหอพัก] ซึ่งต่อไปนี้ในสัญญาจะเรียกว่า <strong>"ผู้ให้เช่า"</strong> ฝ่ายหนึ่ง กับ [ชื่อ-นามสกุลผู้เช่า] ซึ่งต่อไปนี้ในสัญญาจะเรียกว่า <strong>"ผู้เช่า"</strong> อีกฝ่ายหนึ่ง ทั้งสองฝ่ายได้ตกลงทำสัญญากันโดยมีข้อความดังต่อไปนี้</p>
+            
+            <h3>ข้อ 1: ทรัพย์สินที่เช่า</h3>
+            <p>ผู้ให้เช่าตกลงให้เช่า และผู้เช่าตกลงรับเช่าห้องพักหมายเลข [หมายเลขห้อง] เพื่อใช้เป็นที่อยู่อาศัยเท่านั้น</p>
+
+            <h3>ข้อ 2: กำหนดระยะเวลาการเช่า</h3>
+            <p>สัญญาเช่านี้มีกำหนดระยะเวลา 12 เดือน (1 ปี) เริ่มตั้งแต่วันที่ [วันที่เริ่มสัญญา] ถึงวันที่ [วันที่สิ้นสุดสัญญา]</p>
+
+            <h3>ข้อ 3: ค่าเช่าและการชำระเงิน</h3>
+            <p>ผู้เช่าตกลงชำระค่าเช่าในอัตราเดือนละ [จำนวนเงินค่าเช่า] บาท โดยจะชำระค่าเช่าล่วงหน้าภายในวันที่ 5 ของทุกเดือน</p>
+            
+            <div class="signature-area">
+                <p>เพื่อเป็นหลักฐาน ทั้งสองฝ่ายได้อ่านและเข้าใจข้อความในสัญญานี้โดยตลอดแล้ว จึงได้ลงลายมือชื่อไว้เป็นสำคัญ</p>
+                <div class="signature-lines">
+                    <p>ลงชื่อ ....................................................... ผู้ให้เช่า</p>
+                    <p>ลงชื่อ ....................................................... ผู้เช่า</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section id="contact-location">
+        <h1 class="section-title" data-aos="fade-up">ที่ตั้งและช่องทางการติดต่อ</h1>
+        <div class="contact-location-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="map-placeholder">
+            <iframe src="http://googleusercontent.com/maps.google.com/4" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="แผนที่บ้านพักกัน"></iframe>
+          </div>
+          <div class="contact-info-area">
+            <h2><i class="fas fa-paper-plane"></i> กรอกฟอร์มนัดหมาย</h2>
+            <p class="form-instruction">กรอกข้อมูลเพื่อนัดหมายเข้าชมห้องพัก หรือสอบถามข้อมูลเพิ่มเติม</p>
+            <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
+              <div class="form-group">
+                  <label for="room-choice">ห้องที่สนใจ</label>
+                  <select name="room-choice" id="room-choice">
+                    <option value="">-- กรุณาเลือกห้องว่าง --</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="name">ชื่อ - นามสกุล</label>
+                  <input type="text" id="name" name="name" required>
+              </div>
+               <div class="form-group">
+                  <label for="phone">เบอร์โทรศัพท์</label>
+                  <input type="tel" id="phone" name="phone" required>
+              </div>
+               <div class="form-group">
+                  <label for="date">วันที่ต้องการนัดหมาย</label>
+                  <input type="date" id="date" name="date" required>
+              </div>
+              <button type="submit">ส่งข้อมูลนัดหมาย</button>
+            </form>
+            <div class="other-contacts">
+              <h2><i class="fas fa-phone-alt"></i> ช่องทางอื่นๆ</h2>
+              <p>โทร: 08X-XXX-XXXX</p>
+              <p>Line ID: @baanpakgun.up</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+       <div class="footer-content">
+        <div class="footer-section about">
+          <h3><i class="fas fa-home"></i> บ้านพักกัน</h3>
+          <p>ที่พักทันสมัยใจกลางเมือง สะอาด ปลอดภัย พร้อมสิ่งอำนวยความสะดวกครบครัน</p>
+        </div>
+        <div class="footer-section links">
+          <h3>ลิงก์ด่วน</h3>
+          <ul>
+            <li><a href="#Type">ห้องพัก</a></li>
+            <li><a href="#room-status-map">สถานะห้องว่าง</a></li>
+            <li><a href="#nearby">สถานที่ใกล้เคียง</a></li>
+            <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>ติดต่อ</h3>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>หน้ามหาวิทยาลัยพะเยา ต.แม่กา อ.เมือง จ.พะเยา 56000</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>08X-XXX-XXXX</span>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-line"></i>
+            <span>Line ID: @baanpakgun.up</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 บ้านพักกัน. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div id="gallery-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">×</span>
+        <h2 id="modal-title"></h2>
+        <div id="panorama-container"></div>
+      </div>
+    </div>
+
+    <div id="details-modal" class="modal">
+      <div class="details-modal-content">
+        <span class="details-close-button">×</span>
+        <h2 id="details-modal-title"></h2>
+        <div class="details-modal-body">
+          <div class="details-modal-image">
+             <img id="details-modal-img" src="https://via.placeholder.com/400x400.png?text=รูปภาพห้องพัก" alt="รูปภาพห้องพัก">
+          </div>
+          <div class="details-modal-info">
+            <p id="details-modal-type"><strong>ประเภท:</strong> <span></span></p>
+            <p id="details-modal-price"><strong>ราคา:</strong> <span></span></p>
+            <p id="details-modal-status"><strong>สถานะ:</strong> <span></span></p>
+            <p><strong>สิ่งอำนวยความสะดวก:</strong></p>
+            <ul id="details-modal-amenities"></ul>
+          </div>
+        </div>
+        <a href="#contact-location" class="details-modal-button">ติดต่อเพื่อจองห้องนี้</a>
+      </div>
+    </div>
+    
+    <div id="login-modal" class="modal">
+      <div class="login-modal-content">
+        <span class="login-close-button">&times;</span>
+        <h2>เข้าสู่ระบบ</h2>
+        <p class="login-hint">(ทดลองใช้ tenant@email.com หรือ owner@email.com)</p>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email">อีเมล</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">รหัสผ่าน</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit">ล็อกอิน</button>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

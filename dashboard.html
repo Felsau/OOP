@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แดชบอร์ดผู้เช่า - บ้านพักกัน</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+    <link rel="stylesheet" href="dashboard.style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-home"></i> บ้านพักกัน</div>
+            <div class="user-menu">
+                <span class="user-name">สวัสดี, คุณชานนท์</span>
+                <a href="index.html" class="logout-button">ออกจากระบบ</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="welcome-header">
+            <h2>แดชบอร์ดของคุณ</h2>
+            <p>ภาพรวมข้อมูลสำหรับห้อง A2</p>
+        </div>
+
+        <div class="alert-box">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+                <h3>แจ้งเตือนค้างชำระ</h3>
+                <p>คุณมียอดค้างชำระค่าเช่าเดือนกันยายน 2568</p>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3><i class="fas fa-money-bill-wave"></i> การชำระเงิน</h3>
+                <div class="data-highlight">
+                    <span class="value">4,200</span>
+                    <span class="label">บาท (รอบบิลล่าสุด)</span>
+                </div>
+                <p class="data-point"><strong>ครบกำหนด:</strong> 7 กันยายน 2568</p>
+                <div class="card-actions">
+                    <button class="btn btn-primary" id="payment-btn">แจ้งชำระเงิน</button>
+                    <button class="btn btn-secondary" id="history-btn">ดูประวัติ</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-file-contract"></i> สัญญาและมิเตอร์</h3>
+                <div class="data-highlight">
+                    <span class="value">31</span>
+                    <span class="label">มกราคม 2569 (วันสิ้นสุดสัญญา)</span>
+                </div>
+                <p class="data-point"><strong>ค่าไฟเดือนล่าสุด:</strong> รอแจ้งยอด</p>
+                <div class="card-actions">
+                    <button class="btn btn-secondary">ดูรายละเอียดสัญญา</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-tools"></i> แจ้งซ่อม</h3>
+                <p class="description">หากพบปัญหาอุปกรณ์ชำรุดเสียหายภายในห้องพัก สามารถแจ้งเรื่องผ่านช่องทางนี้ได้ทันที</p>
+                <div class="card-actions">
+                    <button class="btn btn-primary" id="maintenance-btn">แจ้งเรื่อง / ดูสถานะ</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-comments"></i> ติดต่อเจ้าของหอ</h3>
+                <p class="description">สอบถามเรื่องทั่วไป หรือแจ้งปัญหาอื่นๆ ที่ต้องการความช่วยเหลือเร่งด่วน</p>
+                <div class="card-actions">
+                    <button class="btn btn-primary">ส่งข้อความ</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="payment-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2><i class="fas fa-receipt"></i> แจ้งชำระเงิน</h2>
+        <form>
+            <div class="form-group">
+                <label for="payment-amount">จำนวนเงินที่โอน</label>
+                <input type="number" id="payment-amount" placeholder="ระบุจำนวนเงิน">
+            </div>
+            <div class="form-group">
+                <label for="payment-date">วันที่โอน</label>
+                <input type="date" id="payment-date">
+            </div>
+            <div class="form-group">
+                <label for="payment-slip">แนบสลิป</label>
+                <input type="file" id="payment-slip">
+            </div>
+            <button type="submit" class="btn btn-primary">ยืนยันการแจ้งชำระ</button>
+        </form>
+      </div>
+    </div>
+    
+    <div id="history-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2><i class="fas fa-history"></i> ประวัติการชำระเงิน</h2>
+          <table>
+            <thead>
+                <tr>
+                    <th>รอบบิล</th>
+                    <th>ยอดชำระ</th>
+                    <th>วันที่ชำระ</th>
+                    <th>สถานะ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>สิงหาคม 2568</td>
+                    <td>4,200 บาท</td>
+                    <td>5 ส.ค. 2568</td>
+                    <td class="status-paid">ชำระแล้ว</td>
+                </tr>
+                <tr>
+                    <td>กรกฎาคม 2568</td>
+                    <td>4,150 บาท</td>
+                    <td>4 ก.ค. 2568</td>
+                    <td class="status-paid">ชำระแล้ว</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    <div id="maintenance-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2><i class="fas fa-tools"></i> แจ้งซ่อม</h2>
+          <form>
+            <div class="form-group">
+                <label for="issue-type">ประเภทปัญหา</label>
+                <select id="issue-type">
+                    <option>ไฟฟ้า</option>
+                    <option>ประปา</option>
+                    <option>เครื่องปรับอากาศ</option>
+                    <option>อินเทอร์เน็ต</option>
+                    <option>อื่นๆ</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="issue-details">รายละเอียด</label>
+                <textarea id="issue-details" rows="4" placeholder="กรุณาอธิบายปัญหาโดยละเอียด..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">ส่งเรื่องแจ้งซ่อม</button>
+          </form>
+        </div>
+      </div>
+
+    <script src="dashboard.script.js"></script>
+</body>
+</html>
